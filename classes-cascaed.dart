@@ -1,7 +1,12 @@
-enum Team {red,blue}
-enum XpLevel{beginner,medium,pro}
+abstract class Human {
+  void walk();
+}
 
-class Player4 {
+enum Team { red, blue }
+
+enum XpLevel { beginner, medium, pro }
+
+class Player4 extends Human {
   String name;
   XpLevel xp;
   Team team;
@@ -15,12 +20,21 @@ class Player4 {
   void sayhello() {
     print("Hi my name is $name");
   }
+
+  void walk() {
+    print('im waking');
+  }
+}
+class Coach extends Human{
+  void walk() {
+    print('coach waking');
+  }
+
 }
 
 void main() {
   var nico = Player4(name: 'nice', xp: XpLevel.beginner, team: Team.red)
-  ..name = 'las'
-  ..xp = XpLevel.medium
-  ..team = Team.blue;
-
+    ..name = 'las'
+    ..xp = XpLevel.medium
+    ..team = Team.blue;
 }
